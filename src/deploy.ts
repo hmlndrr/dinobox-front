@@ -1,37 +1,39 @@
-import axios from "axios";
-import { useState } from "react";
+import axios from 'axios'
+import { useState } from 'react'
 
 export const useDeploy = () => {
-  const [code, update] = useState(`(function () {
+  const [code, update] = useState<string | undefined>(`function run() {
         return fetch('https://randomuser.me/api')
         .then(res => res.json())
         .then(res => res.results[0].login.username)
         .then(res => "Hi, " + res + "!")
-})()`);
+}
 
-  const [output, setOutput] = useState("");
-  const [loading, setLoading] = useState(false);
+run()`)
+
+  const [output, setOutput] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const deploy = async () => {
     if (!code) {
-      alert("Write some code..");
-      return;
+      alert('Write some code..')
+      return
     }
-    setLoading(true);
+    setLoading(true)
     try {
       const { data } = await axios.post(import.meta.env.VITE_API, code, {
         headers: {
-          "Content-Type": "text/plain",
+          'Content-Type': 'text/plain',
         },
-      });
-      setOutput(data);
+      })
+      setOutput(data)
     } catch (error: any) {
-      console.log(error);
+      console.log(error)
 
-      setOutput(error.message);
+      setOutput(error.message)
     }
-    setLoading(false);
-  };
+    setLoading(false)
+  }
 
-  return { code, loading, update, output, deploy };
-};
+  return { code, loading, update, output, deploy }
+}
