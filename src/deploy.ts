@@ -19,7 +19,7 @@ export const useDeploy = () => {
     }
     setLoading(true);
     try {
-      const { data } = await axios.post("http://localhost:8080", code, {
+      const { data } = await axios.post(import.meta.env.VITE_API, code, {
         headers: {
           "Content-Type": "text/plain",
         },
