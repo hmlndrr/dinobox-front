@@ -12,6 +12,11 @@ function App() {
         <h2 className="uppercase font-light text-center">
           I'm Sandbox as a Service, I execute Code!
         </h2>
+        <h3 className="uppercase font-medium text-center text-blue-500">
+          <a href="/index.txt" target="_blank">
+            I am open source, read me!
+          </a>
+        </h3>
         <div className="px-10 pt-10">
           <div className="bg-[#1c1c1c] py-4">
             <Editor
