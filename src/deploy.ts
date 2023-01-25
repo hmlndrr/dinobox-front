@@ -1,12 +1,10 @@
 import axios from 'axios'
 import { useState } from 'react'
 
+
 export const useDeploy = () => {
   const [code, update] = useState<string | undefined>(`function run() {
-        return fetch('https://randomuser.me/api')
-        .then(res => res.json())
-        .then(res => res.results[0].login.username)
-        .then(res => "Hi, " + res + "!")
+        return 'Hello World'
 }
 
 run()`)

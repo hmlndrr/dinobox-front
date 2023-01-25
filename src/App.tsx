@@ -7,11 +7,7 @@ function App() {
   return (
     <div className="grid grid-cols-2 md:grid-cols-4">
       <div className="col-span-2 col-start-1 md:col-start-2">
-        <img
-          src="https://img.freepik.com/premium-vector/flat-vector-illustration-dinosaur-with-long-neck-stegosaurus-illustration_581871-456.jpg"
-          alt="Dinaseur"
-          className="h-60 mx-auto"
-        />
+        <img src="dinasaur.webp" alt="Dinaseur" className="h-60 mx-auto" />
         <h1 className="text-center font-black text-3xl">DinooBox</h1>
         <h2 className="uppercase font-light text-center">
           I'm Sandbox as a Service, I execute Code!
